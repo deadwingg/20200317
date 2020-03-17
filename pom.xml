@@ -82,6 +82,12 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		<!--		Mi dependencia de postgress-->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.2.11</version>
+		</dependency>
 	</dependencies>
 
 	<build>
