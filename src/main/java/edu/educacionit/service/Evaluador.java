@@ -6,6 +6,8 @@ import edu.educacionit.annotations.Loggeable;
 import edu.educacionit.model.Ticket;
 import edu.educacionit.repository.IGuardador;
 import java.util.UUID;
+
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import sensorclima.TipoClima;
 import sensorvelocidad.DatosVehiculo;

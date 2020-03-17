@@ -7,6 +7,7 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
+import sensorvelocidad.DatosVehiculo;
 
 @Component
 @Aspect
@@ -22,6 +23,7 @@ public class AspectoLoggeable {
         System.out.println(joinpoint.getSignature().getDeclaringType());
         System.out.println(joinpoint.getSignature().getDeclaringTypeName());
         System.out.println(joinpoint.getThis());
+        DatosVehiculo ve = (DatosVehiculo) joinpoint.getArgs()[1];
         // tracer.tracear(joinpoint.getThis().toString());
         System.out.println("Antes de ejecutar al metodo ************ FIN");
     }

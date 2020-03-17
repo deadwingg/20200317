@@ -1,10 +1,23 @@
 package edu.educacionit.model;
 
+import org.hibernate.annotations.GenericGenerator;
 import sensorclima.TipoClima;
 import sensorvelocidad.DatosVehiculo;
 import sensorvelocidad.TipoVehiculo;
 
+import javax.persistence.*;
+import java.util.UUID;
+
+@Entity
+@Table(name = "tickets")
 public class Ticket {
+    @Id
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(
+            name = "UUID",
+            strategy = "org.hibernate.id.UUIDGenerator"
+    )
+    private UUID id;
     public String idTicket;
     public Long fechaYHora;
     public String patente;

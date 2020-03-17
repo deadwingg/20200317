@@ -1,20 +1,21 @@
 package edu.educacionit.repository;
 
 import com.google.gson.Gson;
-import edu.educacionit.model.Ticket;
-import java.io.File;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import sensorclima.TipoClima;
+import sensorvelocidad.TipoVehiculo;
 
+import java.io.File;
 
 @Component
-public class GuardadorEnJson implements IGuardador{
-    @Value("${patharchivos}")
-    private String pathArchivos;
-    
-    public void guardar(Ticket t) {
+public class RegistrarActividad {
+/*
+
+
+    public void registrar (TipoClima clima, TipoVehiculo vehiculo){
         Gson gson = new Gson();
-        String ticketJson = gson.toJson(t);
+        String ticketJson = gson.toJson(vehiculo);
         System.out.println(ticketJson);
 
         String pathArchivo = String.join("", pathArchivos, t.idTicket, ".json");
@@ -28,4 +29,5 @@ public class GuardadorEnJson implements IGuardador{
             ex.printStackTrace();
         }
     }
+*/
 }

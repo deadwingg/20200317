@@ -10,7 +10,9 @@ import sensorclima.TipoClima;
 import sensorvelocidad.DatosVehiculo;
 import sensorvelocidad.TipoVehiculo;
 
-@SpringBootTest
+import java.util.Date;
+
+@SpringBootTest(classes = Date.class)
 class DemoApplicationTests {
     @Test
     void CamionLLuviaModerada() {
