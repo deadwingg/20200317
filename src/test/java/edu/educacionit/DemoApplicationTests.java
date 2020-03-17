@@ -2,6 +2,7 @@ package edu.educacionit;
 
 import edu.educacionit.repository.IGuardador;
 import edu.educacionit.service.Evaluador;
+import java.util.Date;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,7 +11,7 @@ import sensorclima.TipoClima;
 import sensorvelocidad.DatosVehiculo;
 import sensorvelocidad.TipoVehiculo;
 
-@SpringBootTest
+@SpringBootTest(classes={Date.class})
 class DemoApplicationTests {
     @Test
     void CamionLLuviaModerada() {
