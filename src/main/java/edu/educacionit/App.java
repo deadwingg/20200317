@@ -1,7 +1,9 @@
 package edu.educacionit;
 
+import edu.educacionit.aspects.AspectoManual;
 import edu.educacionit.model.Ticket;
 import edu.educacionit.repository.GuardadorEnJson;
+import edu.educacionit.service.Evaluador;
 import java.util.UUID;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -11,6 +13,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 import sensorclima.TipoClima;
+import sensorvelocidad.DatosVehiculo;
 import sensorvelocidad.TipoVehiculo;
 
 @Component
@@ -29,6 +32,9 @@ public class App implements CommandLineRunner {
     
     @Autowired
     ApplicationContext ctx;
+    
+    @Autowired
+    Evaluador evaluador;
     
     @Override
     public void run(String... args) throws Exception {
@@ -56,18 +62,15 @@ public class App implements CommandLineRunner {
         // Testear la logica
         
         
-        /*
         for (;;) {
             DatosVehiculo dv = sensorvel.sensarVehiculo();
-            // Atencion SOLO SE USAN ESTOS TRES CAMPOS
+            
             System.out.println(dv.patente);
             System.out.println(dv.tipoVehiculo);
             System.out.println(dv.velocidadMedida);
             System.out.println("");
             
-            B b = new B(UUID.randomUUID().toString(), dv.patente);
-            z.persistir(b);
+            evaluador.evaluar(tipoClima, dv);
         }
-        */
     }
 }

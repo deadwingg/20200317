@@ -2,6 +2,7 @@ package edu.educacionit.service;
 
 import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Table;
+import edu.educacionit.annotations.Loggeable;
 import edu.educacionit.model.Ticket;
 import edu.educacionit.repository.IGuardador;
 import java.util.UUID;
@@ -38,6 +39,7 @@ public class Evaluador {
         this.guardador = guardador;
     }
     
+    @Loggeable
     public void evaluar (TipoClima clima, DatosVehiculo vehiculo){
         if (vehiculo.velocidadMedida <= multas.get(vehiculo.tipoVehiculo, clima)) {
             return;
