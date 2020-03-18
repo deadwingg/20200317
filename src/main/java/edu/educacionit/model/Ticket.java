@@ -15,10 +15,9 @@ public class Ticket {
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(
             name = "UUID",
-            strategy = "org.hibernate.id.UUIDGenerator"
+            strategy = "uuid2"
     )
-    private UUID id;
-    public String idTicket;
+    public UUID idTicket;
     public Long fechaYHora;
     public String patente;
     public String tipoVehiculo;
@@ -28,8 +27,7 @@ public class Ticket {
     public Ticket() {
     }
     
-    public Ticket(String idTicket, Long fechaYHora, String patente, String tipoVehiculo, Integer velocidadMedida, String tipoClima) {
-        this.idTicket = idTicket;
+    public Ticket(Long fechaYHora, String patente, String tipoVehiculo, Integer velocidadMedida, String tipoClima) {
         this.fechaYHora = fechaYHora;
         this.patente = patente;
         this.tipoVehiculo = tipoVehiculo;
