@@ -21,16 +21,17 @@ public class SQLMasJSON implements IGuardador {
 
     @Override
     public void guardar(Ticket t) {
+        try {
+            guardadorEnMysql.guardar(t);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         try{
             guardadorEnJson.guardar(t);
         } catch (Exception ex){
             ex.printStackTrace();
         }
 
-        try {
-            guardadorEnMysql.guardar(t);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 }
