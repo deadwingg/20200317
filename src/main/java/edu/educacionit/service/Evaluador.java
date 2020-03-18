@@ -46,9 +46,7 @@ public class Evaluador {
         if (vehiculo.velocidadMedida <= multas.get(vehiculo.tipoVehiculo, clima)) {
             return;
         }
-        
         Ticket t = new Ticket();
-        t.idTicket = UUID.randomUUID().toString();
         t.fechaYHora = System.currentTimeMillis() / 1000;
         t.patente = vehiculo.patente;
         t.tipoClima = clima.name();
