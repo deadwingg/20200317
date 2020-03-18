@@ -15,13 +15,14 @@ import sensorvelocidad.DatosVehiculo;
 public class AspectoManual {
     private Evaluador evaluador;
     
-    @Value("${pathregistroactividad}")
+
     private String pathRegistroActividad;
     
-    public AspectoManual(Evaluador evaluador) {
+    public AspectoManual(Evaluador evaluador, @Value("${pathregistroactividad}") String pathRegistroActividad) {
         System.out.println("Chequeando si llama al constructor");
         System.out.println(evaluador);
         this.evaluador = evaluador;
+        this.pathRegistroActividad = pathRegistroActividad;
     }
     public void evaluar (TipoClima clima, DatosVehiculo vehiculo) {
         try {

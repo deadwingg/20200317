@@ -9,16 +9,19 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class GuardadorEnJson implements IGuardador{
-    @Value("${patharchivos}")
+
     private String pathArchivos;
-    
+
+    public GuardadorEnJson(@Value("${patharchivos}")String pathArchivos){
+        this.pathArchivos = pathArchivos;
+    }
     public void guardar(Ticket t) {
         Gson gson = new Gson();
         String ticketJson = gson.toJson(t);
         System.out.println(ticketJson);
 
-        String pathArchivo = String.join("", pathArchivos, t.idTicket, ".json");
-        System.out.println(pathArchivo);
+        System.out.println(pathArchivos);
+        String pathArchivo = String.join("", pathArchivos, t.idTicket.toString(), ".json");
 
         File f = new File(pathArchivo);
         try {
